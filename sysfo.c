@@ -33,6 +33,7 @@ void main(int argc, char *argv[])
 	/* const char *editor = "echo $EDITOR"; */
 	const char* PATH = getenv("PATH");
 	const char* EDITOR = getenv("EDITOR");
+	const char* SHELL = getenv("SHELL");
 	const char *error = "Sorry, not a recognized commnad";
 
 	if(argc == 1)
@@ -48,6 +49,8 @@ void main(int argc, char *argv[])
 			system(hostname);
 		else if(strcmp(argv[1], "path") == 0)
 			printf("%s\n", PATH);
+		else if(strcmp(argv[1], "shell") == 0)
+			printf("%s\n", SHELL);
 		else if(strcmp(argv[1], "editor") == 0) {
 			if (EDITOR == NULL) 
 				printf("You need to export an $EDITOR in your shell profile\n");
