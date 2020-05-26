@@ -13,7 +13,7 @@ void info()
 }
 void startup()
 {
-	printf("Hello, type '--help' for more information\r\n");
+	printf("Hello, type '--help' for more information\n");
 }
 
 
@@ -27,11 +27,13 @@ void main(int argc, char *argv[])
 	/* 	printf(""); */
 	/* } */
 
-	char *kernel = "uname -r";
-	char *hostname = "hostname";
-	char *path = "echo $PATH";
-	char *editor = "echo $EDITOR";
-	char *error = "echo 'Sorry, not a recognized command'";
+	const char *kernel = "uname -r";
+	const char *hostname = "hostname";
+	/* char *path = "echo $PATH"; */
+	/* const char *editor = "echo $EDITOR"; */
+	const char* PATH = getenv("PATH");
+	const char* EDITOR = getenv("EDITOR");
+	const char *error = "Sorry, not a recognized commnad";
 
 	if(argc == 1)
 		startup();
@@ -45,12 +47,14 @@ void main(int argc, char *argv[])
 		else if(strcmp(argv[1], "hostname") == 0)
 			system(hostname);
 		else if(strcmp(argv[1], "path") == 0)
-			system(path);
-		else if(strcmp(argv[1], "editor") == 0)
-			system(editor);
-		else
-			system(error);
-
+			printf("%s\n", PATH);
+		else if(strcmp(argv[1], "editor") == 0) {
+			if (EDITOR == NULL) 
+				printf("You need to export an $EDITOR in your shell profile\n");
+			else
+				printf("%s\n", EDITOR);
+		} else
+			printf("%s\n", error);
 	} 
 }
 
