@@ -11,7 +11,7 @@ void info()
 	printf("\tkernel		Will display the kernel version\n");
 	printf("\thostname	Will display the system hostname\n");
 	printf("\tPATH		Will display the $PATH\n");
-	printf("\tEDITOR	Will display the $EDITOR\n");
+	printf("\tEDITOR		Will display the $EDITOR\n");
 	printf("\tSHELL		Will display the $SHELL\n");
 }
 void startup()
