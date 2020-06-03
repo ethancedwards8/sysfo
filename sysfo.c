@@ -10,6 +10,9 @@ void info()
 	printf("INFO:\n");
 	printf("\tkernel		Will display the kernel version\n");
 	printf("\thostname	Will display the system hostname\n");
+	printf("\tPATH		Will display the $PATH\n");
+	printf("\tEDITOR	Will display the $EDITOR\n");
+	printf("\tSHELL		Will display the $SHELL\n");
 }
 void startup()
 {
@@ -34,7 +37,6 @@ void main(int argc, char *argv[])
 	const char* PATH = getenv("PATH");
 	const char* EDITOR = getenv("EDITOR");
 	const char* SHELL = getenv("SHELL");
-	const char *error = "Sorry, not a recognized commnad";
 
 	if(argc == 1)
 		startup();
@@ -57,7 +59,7 @@ void main(int argc, char *argv[])
 			else
 				printf("%s\n", EDITOR);
 		} else
-			printf("%s\n", error);
+			printf("Sorry, not a recognized command\n");
 	} 
 }
 
