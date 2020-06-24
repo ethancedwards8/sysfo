@@ -4,20 +4,17 @@
 
 void info()
 {
-	printf("Usage: sysinfo [FUNC]\n\n");
-	printf("sysinfo is a neofetch inspired idea written in C\n");
-	printf("sysinfo will display system information upon request\n\n");
-	printf("INFO:\n");
-	printf("\tkernel		Will display the kernel version\n");
-	printf("\thostname	Will display the system hostname\n");
+	fprintf(stdout, "Usage: sysinfo [FUNC]\n\n");
+	fprintf(stdout, "sysinfo is a neofetch inspired idea written in C\n");
+	fprintf(stdout, "sysinfo will display system information upon request\n\n");
+	fprintf(stdout, "INFO:\n");
+	fprintf(stdout, "\tkernel		Will display the kernel version\n");
+	fprintf(stdout, "\thostname	Will display the system hostname\n");
 }
 void startup()
 {
 	printf("Hello, type '--help' for more information\n");
 }
-
-
-
 void main(int argc, char *argv[])
 {
 	/* if(argc == "--help") { */
