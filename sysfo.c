@@ -14,11 +14,7 @@ void info()
 	fprintf(stdout, "\tEDITOR		Will display the $EDITOR\n");
 	fprintf(stdout, "\tSHELL		Will display the $SHELL\n");
 }
-void startup()
-{
-	printf("Hello, type '--help' for more information\n");
-}
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	/* if(argc == "--help") { */
 	/* 	printf("Usage: afetch [FUNC]\n\n"); */
@@ -36,7 +32,7 @@ void main(int argc, char *argv[])
 	const char* SHELL = getenv("SHELL");
 
 	if(argc == 1)
-		startup();
+		info();
 
 	if(argc == 2)
 	{
@@ -58,6 +54,7 @@ void main(int argc, char *argv[])
 		} else
 			printf("Sorry, not a recognized command\n");
 	} 
+	return 0;
 }
 
 
