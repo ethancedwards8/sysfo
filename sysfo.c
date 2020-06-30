@@ -4,23 +4,16 @@
 
 void info()
 {
-	printf("Usage: sysinfo [FUNC]\n\n");
-	printf("sysinfo is a neofetch inspired idea written in C\n");
-	printf("sysinfo will display system information upon request\n\n");
-	printf("INFO:\n");
-	printf("\tkernel		Will display the kernel version\n");
-	printf("\thostname	Will display the system hostname\n");
-	printf("\tPATH		Will display the $PATH\n");
-	printf("\tEDITOR		Will display the $EDITOR\n");
-	printf("\tSHELL		Will display the $SHELL\n");
+	fprintf(stdout, "Usage: sysinfo [FUNC]\n\n");
+	fprintf(stdout, "sysinfo is a neofetch inspired idea written in C\n");
+	fprintf(stdout, "sysinfo will display system information upon request\n\n");
+	fprintf(stdout, "INFO:\n");
+	fprintf(stdout, "\tkernel		Will display the kernel version\n");
+	fprintf(stdout, "\thostname	Will display the system hostname\n");
+	fprintf(stdout, "\tPATH		Will display the $PATH\n");
+	fprintf(stdout, "\tEDITOR		Will display the $EDITOR\n");
+	fprintf(stdout, "\tSHELL		Will display the $SHELL\n");
 }
-void startup()
-{
-	printf("Hello, type '--help' for more information\n");
-}
-
-
-
 int main(int argc, char *argv[])
 {
 	/* if(argc == "--help") { */
@@ -39,7 +32,7 @@ int main(int argc, char *argv[])
 	const char* SHELL = getenv("SHELL");
 
 	if(argc == 1)
-		startup();
+		info();
 
 	if(argc == 2)
 	{
