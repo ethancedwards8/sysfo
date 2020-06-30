@@ -21,7 +21,7 @@ void startup()
 
 
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	/* if(argc == "--help") { */
 	/* 	printf("Usage: afetch [FUNC]\n\n"); */
@@ -61,6 +61,7 @@ void main(int argc, char *argv[])
 		} else
 			printf("Sorry, not a recognized command\n");
 	} 
+	return 0;
 }
 
 
