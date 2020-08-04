@@ -48,11 +48,11 @@ int main(int argc, char *argv[])
 			printf("%s\n", SHELL);
 		else if(strcmp(argv[1], "editor") == 0) {
 			if (EDITOR == NULL) 
-				printf("You need to export an $EDITOR in your shell profile\n");
+				fprintf(stderr, "You need to export an $EDITOR in your shell profile\n");
 			else
 				printf("%s\n", EDITOR);
 		} else
-			printf("Sorry, not a recognized command\n");
+			fprintf(stderr, "Sorry, not a recognized command\n");
 	} 
 	return 0;
 }
