@@ -4,15 +4,15 @@
 
 void info()
 {
-	fprintf(stdout, "Usage: sysinfo [FUNC]\n\n");
-	fprintf(stdout, "sysinfo is a neofetch inspired idea written in C\n");
-	fprintf(stdout, "sysinfo will display system information upon request\n\n");
-	fprintf(stdout, "INFO:\n");
-	fprintf(stdout, "\tkernel		Will display the kernel version\n");
-	fprintf(stdout, "\thostname	Will display the system hostname\n");
-	fprintf(stdout, "\tPATH		Will display the $PATH\n");
-	fprintf(stdout, "\tEDITOR		Will display the $EDITOR\n");
-	fprintf(stdout, "\tSHELL		Will display the $SHELL\n");
+	printf("Usage: sysfo [FUNC]\n\n"
+	"sysfo is a neofetch inspired idea written in C\n"
+	"sysfo will display system information upon request\n\n"
+	"INFO:\n"
+	"\tkernel		Will display the kernel version\n"
+	"\thostname	Will display the system hostname\n"
+	"\tPATH		Will display the $PATH\n"
+	"\tEDITOR		Will display the $EDITOR\n"
+	"\tSHELL		Will display the $SHELL\n");
 }
 int main(int argc, char *argv[])
 {
