@@ -25,8 +25,6 @@ int main(int argc, char *argv[])
 
 	const char *kernel = "uname -r";
 	const char *hostname = "hostname";
-	/* char *path = "echo $PATH"; */
-	/* const char *editor = "echo $EDITOR"; */
 	const char* PATH = getenv("PATH");
 	const char* EDITOR = getenv("EDITOR");
 	const char* SHELL = getenv("SHELL");
@@ -56,5 +54,5 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "Sorry, not a recognized command\n");
 			return -1;
 		}
-	} 
+	}
 }
