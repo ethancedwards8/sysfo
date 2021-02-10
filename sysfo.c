@@ -36,6 +36,10 @@ int main(int argc, char *argv[])
 	{
 		if(strcmp(argv[1], "--help") == 0)
 			info();
+		else if(strcmp(argv[1], "-V") == 0)
+			printf("1.0\n");
+		else if(strcmp(argv[1], "--version") == 0)
+			printf("1.0\n");
 		else if(strcmp(argv[1], "kernel") == 0)
 			system(kernel);
 		else if(strcmp(argv[1], "hostname") == 0)
