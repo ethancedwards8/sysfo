@@ -2,6 +2,7 @@
   description = "a flake for sysfo";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs";
+  inputs.flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
 
   outputs = { self, nixpkgs }:
     let
