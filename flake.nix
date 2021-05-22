@@ -1,7 +1,7 @@
 {
   description = "a flake for sysfo";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
 
   outputs = { self, nixpkgs, flake-compat }:
@@ -13,6 +13,7 @@
       overlay = final: prev:
         with final; {
           sysfo = stdenv.mkDerivation {
+            __contentAddressed = true;
             pname = "sysfo";
             version = "1.0";
 
@@ -30,6 +31,10 @@
               mkdir -p $out/bin
               cp sysfo $out/bin/sysfo
             '';
+
+            nativeBuildInputs = with pkgs; [
+              clang
+            ];
           };
         };
 
