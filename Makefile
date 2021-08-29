@@ -1,6 +1,7 @@
+CC = gcc
 
 sysfo: sysfo.c
-	clang sysfo.c -o sysfo
+	$(CC) sysfo.c -o sysfo
 
 clean:
 	rm sysfo
