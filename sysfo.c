@@ -16,24 +16,18 @@ void info()
 }
 int main(int argc, char *argv[])
 {
-	/* if(argc == "--help") { */
-	/* 	printf("Usage: afetch [FUNC]\n\n"); */
-	/* 	printf("Afetch is a neofetch inspired idea written in C\n"); */
-	/* 	printf("Afetch will display system information apon request\n"); */
-	/* 	printf(""); */
-	/* } */
-
 	const char *kernel = "uname -r";
 	const char *hostname = "hostname";
 	const char* PATH = getenv("PATH");
 	const char* EDITOR = getenv("EDITOR");
 	const char* SHELL = getenv("SHELL");
 
-	if(argc == 1)
+	if(argc == 1 || argc >= 3)
 		info();
 
 	if(argc == 2)
 	{
+        /* ooof */
 		if(strcmp(argv[1], "--help") == 0)
 			info();
 		else if(strcmp(argv[1], "-V") == 0)

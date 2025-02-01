@@ -1,14 +1,12 @@
-CC = gcc
-
 sysfo: sysfo.c
 	$(CC) sysfo.c -o sysfo
 
 clean:
 	rm sysfo
 
-install: sysfo.c
+install: sysfo
 	mkdir -p /usr/bin/
-	clang sysfo.c -o /usr/bin/sysfo
+	cp sysfo /usr/bin/sysfo
 
 uninstall: 
 	rm -f /usr/bin/sysfo

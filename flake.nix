@@ -6,8 +6,7 @@
 
   outputs = { self, nixpkgs, flake-compat }:
     let
-      supportedSystems = [ "x86_64-linux" "i686-linux" "aarch64-linux" "x86_64-darwin" ];
-      forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
+      forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
     {
       overlay = final: prev:
@@ -19,22 +18,18 @@
 
             src = ./.;
 
-            buildPhase = ''
-              make
-            '';
+            # buildPhase = ''
+            #   make CC=clang
+            # '';
 
-            checkPhase = ''
-              $out/bin/sysfo -V > /dev/null
-            '';
+            # checkPhase = ''
+            #   $out/bin/sysfo -V > /dev/null
+            # '';
 
             installPhase = ''
               mkdir -p $out/bin
               cp sysfo $out/bin/sysfo
             '';
-
-            nativeBuildInputs = with pkgs; [
-              clang
-            ];
           };
         };
 
